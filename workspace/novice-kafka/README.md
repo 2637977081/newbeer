@@ -1,16 +1,10 @@
-spring:
-  application:
-    name: novice-kafka #服务名称
-  datasource:
-    url: jdbc:mysql://192.168.152.128:3306/test?useUnicode=true&characterEncoding=utf8&useSSL=false&autoReconnect=true
-    username: root
-    password: mysql
-    driverClassName: com.mysql.jdbc.Driver
-  redis:
-    database: 5
-    host: 192.168.152.128
-    port: 6379
-    password:
+#kafka 配置
+配置kafka服务教程
+http://kafka.apache.org/quickstart
+
+###application.yml
+```properties
+spring
   cloud:
      stream:
         default:
@@ -35,7 +29,19 @@ spring:
             destination: test
           task-output:
             destination: test
+```
+###pom.xml
+```properties
+<!-- kafka客户端依赖 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-stream-kafka</artifactId>
+            <version>2.0.1.RELEASE</version>
+        </dependency>
 
-mybatis:
-  mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.univer.*.po
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-stream</artifactId>
+            <version>2.0.1.RELEASE</version>
+        </dependency>
+```
