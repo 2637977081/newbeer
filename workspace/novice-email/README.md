@@ -5,7 +5,7 @@
   mail:
     host: smtp.sina.com
     username: catcoder@sina.com
-    password: 19971128lv
+    password: *****
     properties:
       mail:
         smtp:
